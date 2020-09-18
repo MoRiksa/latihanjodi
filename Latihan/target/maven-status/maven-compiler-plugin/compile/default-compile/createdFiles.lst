@@ -1,0 +1,7 @@
+Impl\KoneksiJDBC.class
+Model\Kabupaten.class
+Model\Provinsi.class
+Model\Kecamatan.class
+org\jodi\Latihan\Controller\Apps.class
+org\jodi\Latihan\LatihanApplication.class
+Config\Konfigurasi.class

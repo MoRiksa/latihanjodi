@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout-umum}">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script th:src="@{/js/addkab.js}" type="text/javascript"></script>
+        
+    </head>
+    <body>
+        
+       
+       
+        <div layout:fragment="content">
+            
+            <div class="row">
+                <div class="col-md-8">
+                    <form th:action="@{/savekab}" th:object="${kabupaten}" method="post">
+                        
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">ID Kabupaten</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" th:field="*{kodeBPS}" placeholder="ID Kabupaten">
+                                <span th:if="${#fields.hasErrors('kodeBPS')}" th:errors="*{kodeBPS}" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Nama Kabupaten</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" th:field="*{namaKabupaten}" placeholder="Nama Kabupaten">
+                                <span th:if="${#fields.hasErrors('namaKabupaten')}" th:errors="*{namaKabupaten}" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Nama Provinsi</label>
+                            <div class="col-sm-10">
+                        <select class="form-control selectpicker" id="dataprovinsi" th:field="*{provinsi}">
+                            
+                        </select>
+                                <span th:if="${#fields.hasErrors('namaKabupaten')}" th:errors="*{namaKabupaten}" class="text-danger"></span>
+                            </div>
+                            
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">Tambah</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>               
+            </div>
+            
+           
+        </div>
+    </body>
+</html>
